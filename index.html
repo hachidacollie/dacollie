@@ -113,16 +113,43 @@
             margin-top: 4.5px;
         }
 
-        @media (max-width: 600px) {
-            #me {
-                width: 80%;
-                zoom: 2.2;
+        @media (max-width: 414px) {
+            #box {
+                width: 90%; /* Allow more space on smaller screens */
+                padding: 15px;
+            }
+            .contact {
+                font-size: 22px; /* Reduce the font size for better fitting */
             }
             .contactleft {
-                width: 100%;
-                padding: 0px; /* adjusted padding for mobile */
+                font-size: 16px; /* Slightly smaller font for buttons */
+            }
+            #me {
+                width: 80%; /* Make image slightly smaller to fit better */
+            }
+            #bio {
+                font-size: 1rem; /* Adjust bio text size for better fitting */
             }
         }
+
+        /* iPhone SE / Smaller device (max-width 320px) */
+        @media (max-width: 320px) {
+            #box {
+                width: 85%; /* Further adjust width for very small screens */
+                padding: 10px;
+            }
+            .contact {
+                font-size: 20px;
+            }
+            .contactleft {
+                font-size: 14px; /* Reduce button text size */
+            }
+            #me {
+                width: 70%; /* Reduce image size even more for small screens */
+            }
+            #bio {
+                font-size: 0.9rem; /* Further reduce bio text size */
+            }
         
     </style>
 

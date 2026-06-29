@@ -326,38 +326,40 @@ body {
     opacity: 0.7;
 }
 
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+.social-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-top: 10px;
 }
 
 .pill-hero {
     width: 100%;
     min-height: 72px;
-    padding: 14px 18px;
+    padding: 14px 20px;
+    justify-content: flex-start;
     background: linear-gradient(135deg,
         color-mix(in srgb, var(--accent) 28%, #fff) 0%,
         color-mix(in srgb, var(--accent) 12%, #fff) 100%);
     border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
     color: var(--ink);
-    gap: 14px;
-    font-size: 20px;
+    gap: 16px;
     box-shadow:
-        0 10px 24px color-mix(in srgb, var(--accent) 25%, transparent),
+        0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent),
         0 4px 10px rgba(0,0,0,0.08);
 }
 .pill-hero .pill-icon {
     width: 30px;
     height: 30px;
     color: var(--accent);
+    flex-shrink: 0;
 }
 .pill-hero-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     line-height: 1.1;
+    min-width: 0;
 }
 .pill-hero-title {
     font-family: MNSeafood, sans-serif;

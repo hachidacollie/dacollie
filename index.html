@@ -1,217 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>ハチーダーコリー</title>
-        <link rel="icon" type="image/png" href="WWWWWWWW.png"/>  
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="title" content="ハチーダーコリー" />
-        <meta name="description" content="Get to know me!" />
-        
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hachidacollie.github.io/dacollie/" />
-        <meta property="og:title" content="ハチーダーコリー" />
-        <meta property="og:description" content="Get to know me!" />
+<head>
+    <meta charset="UTF-8">
+    <title>ハチーダーコリー</title>
+    <link rel="icon" type="image/png" href="WWWWWWWW.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="ハチーダーコリー"/>
+    <meta name="description" content="Get to know me!"/>
 
-    
-        <meta property="twitter:card" content="Small_image"/>
-        <meta property="twitter:url" content="https://hachidacollie.github.io/dacollie/" />
-        <meta property="twitter:title" content="ハチーダーコリー" />
-        <meta property="twitter:description" content="Get to know me!" />
-  
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://hachidacollie.github.io/dacollie/"/>
+    <meta property="og:title" content="ハチーダーコリー"/>
+    <meta property="og:description" content="Get to know me!"/>
 
+    <meta property="twitter:card" content="Small_image"/>
+    <meta property="twitter:url" content="https://hachidacollie.github.io/dacollie/"/>
+    <meta property="twitter:title" content="ハチーダーコリー"/>
+    <meta property="twitter:description" content="Get to know me!"/>
 
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-  
-    </head>
+<body>
+    <canvas id="sakura"></canvas>
 
+    <main id="box" class="card">
+        <h1 class="title" data-text="Hachidacollie!">
+            <span>H</span><span>a</span><span>c</span><span>h</span><span>i</span><span>d</span><span>a</span><span>c</span><span>o</span><span>l</span><span>l</span><span>i</span><span>e</span><span>!</span>
+        </h1>
 
-    <style>
-        @font-face {
-            font-family: MNSeafood;
-            src: url(MNSeafood.ttf);
-        }
-        @font-face {
-            font-family: naturaly;
-            src: url(Naturaly.otf);
-        }
+        <div class="pfp-wrap">
+            <img id="me" class="pfp" src="mypfp.png" width="150" height="150" alt="Hachi the collie"/>
+            <div class="speech-bubble" id="bubble">tap me!</div>
+        </div>
 
-        body {
-            zoom: 1.5;
-        }
-        span {
-            margin: 10px;
-        }
-        #box {
-            width: 300px;
-            background-image: url("bg1.png");
-            background-size: cover;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 15px;
-            display: block;
-            padding-bottom: 10px;
-            padding-top: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        .imgformat {
-            border-radius: 5px;
-        }
-        #me {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-            border: 4px solid #8B4513;
-            border-radius: 7px;
-        }
-        .contact {
-            font-family:  MNSeafood;
-            color:#f0f0f0;
-            font-size: 24px;
-            text-align: center;
-            text-shadow: 2px 2px #000000;
-            padding-bottom: 5px;
-        }
-        
-        
-        .contactleft {
-            font-family:  naturaly;
-            font-size: 22px;
-            text-align: center;
-            height: 35px;
-            background-color: #F5DEB3;
-            border: 2px solid #8B4513;
-            border-radius: 10px;
-            cursor: pointer;
-            transition-duration: 0.4s;
-            margin-left: 5px;
-            margin-right: 3px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            width: 125px;
-        }
-        .contactleft:hover {
-            background-color: #ffffe0;
-            color: white;
-        }
-        .textb {
-            vertical-align: 2px;
-            color: #191970
-        }
-
-        #bio {
-            font-family: naturaly;
-            font-size: 20px;
-            margin-left: 5%;
-            margin-right: auto;
-            margin-top: 10px;
-            color: #483d8b;
-            text-shadow: 2px 2px #f0f0f0;
-                       
-        }
-
-        #bio1 {
-            font-family: naturaly;
-            font-size: 20px;
-            margin-bottom: auto;
-            color: #483d8b;
-            text-shadow: 2px 2px #f0f0f0;
-            
-                       
-        }
-
-        #contacthead {
-            padding-top: 10px;
-            font-family: MNSeafood;
-            color:#6A5ACD;
-            font-size: 24px;
-            text-align: center;
-            text-shadow: 2px 2px #f0f0f0;
-        }
-
-        .imgc {
-            margin-top: 4.5px;
-            width: 20px;
-            height: 20px;
-        }
-        @media screen and (max-width: 431px) {
-            .contact {
-                font-size: 22px;
-            }
-
-            .imgc {
-                margin-top: 4.5px;
-                width: 16px;
-                height: 16px;
-            }
-
-            #box{
-                width: 270px;;
-            }
-
-            #bio1 {
-                font-size: 1rem;
-            }
-
-            .textb {
-            vertical-align: 2.8px;
-            color: #191970
-            }
-
-            .contactleft {
-                font-family:  naturaly;
-                font-size: 17px;
-                text-align: center;
-                height: 35px;
-                background-color: #F5DEB3;
-                border: 2px solid #8B4513;
-                border-radius: 10px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                margin-left: 10px;
-                margin-right: 5px;
-                margin-top: 5px;
-                margin-bottom: 5px;
-                width: 100px;
-            }
-
-            #bio {
-                font-size: 18px;
-            }
-            #bio1 {
-                font-size: 18px;
-            }
-        }
-    </style>
-
-
-    <body style="background-color:#ADD8E6;">
-        
-        <div id="box">
-            <div class="contact">Hachidacollie!</div>
-            <img id="me" src="mypfp.png" 
-            width="150" height="150">
-        <div id="bio">Me!? My name is Hachi! 
-            <div>&nbsp;&nbsp;&nbsp; a certified 23 years old collie.<br>  
+        <section id="bio">
+            <p>Me!? My name is Hachi!</p>
+            <p>&nbsp;&nbsp;&nbsp;a certified 23 years old collie.<br>
                 who love to travel and hangout with friends!
-                feel free to contact me~
-                <div id="bio1">I love making new friends!!<div>
+                feel free to contact me~</p>
+            <p id="bio1">I love making new friends!!</p>
+        </section>
 
+        <h2 id="contacthead">Contact</h2>
+
+        <div class="button-container">
+            <button class="contactleft" data-url="https://twitter.com/hachidacollie">
+                <img class="imgc" src="twitter.png" alt=""><span class="textb">Twitter</span>
+            </button>
+            <button class="contactleft" data-url="https://www.facebook.com/hachix2">
+                <img class="imgc" src="facebook.png" alt=""><span class="textb">Facebook</span>
+            </button>
+            <button class="contactleft" data-url="https://bsky.app/profile/hachidacollie.bsky.social">
+                <img class="imgc" src="bluesky.png" alt=""><span class="textb">Bluesky</span>
+            </button>
+            <button class="contactleft" data-url="https://t.me/hachidacollie">
+                <img class="imgc" src="telegram.png" alt=""><span class="textb">Telegram</span>
+            </button>
         </div>
-            <div id="contacthead">Contact</div>
-            
-                <div class="button-container">
-                <button onclick="window.open('https://twitter.com/hachidacollie')" class="contactleft"><img class="imgc" src="twitter.png" >
-                    <h class="textb">Twitter</h></button>
-                <button onclick="window.open('https://www.facebook.com/hachix2')" class="contactleft"><img class="imgc" src="facebook.png">
-                    <h class="textb">Facebook</h></button>
-                <button onclick="window.open('https://bsky.app/profile/hachidacollie.bsky.social')" class="contactleft"><img class="imgc"  src="bluesky.png">
-                    <h class="textb">Bluesky</h></button>
-                <button onclick="window.open('https://t.me/hachidacollie')"class="contactleft"><img class="imgc" src="telegram.png">
-                    <h class="textb">Telegram</h></button>
-                </div>
-        </div>
-    </body>
+    </main>
 
+    <div id="paw-layer" aria-hidden="true"></div>
 
+    <script src="script.js"></script>
+</body>
 </html>

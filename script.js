@@ -1,28 +1,16 @@
-// ---------- 3D tilt on the card ----------
-const card = document.getElementById('box');
-const tiltMax = 8;
-
-document.addEventListener('mousemove', (e) => {
-    const r = card.getBoundingClientRect();
-    const cx = r.left + r.width / 2;
-    const cy = r.top + r.height / 2;
-    const dx = (e.clientX - cx) / (window.innerWidth / 2);
-    const dy = (e.clientY - cy) / (window.innerHeight / 2);
-    card.style.transform = `perspective(900px) rotateY(${dx * tiltMax}deg) rotateX(${-dy * tiltMax}deg)`;
-});
-document.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-});
+const isTouch = matchMedia('(hover: none)').matches;
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---------- pfp click: bark + hearts + bubble line ----------
 const pfp = document.getElementById('me');
 const bubble = document.getElementById('bubble');
 const reactions = [
-    'awoo!', 'woof~', 'hi!!', 'sawatdee~', 'bork!', 'wag wag', 'collie life', '*tail wag*',
+    'awoo!', 'woof~', 'hi!!', 'sawatdee~', 'bork!', 'wag wag',
+    'collie life', '*tail wag*', 'hewwo', 'arf!',
 ];
 let reactIdx = 0;
 
-pfp.addEventListener('click', (e) => {
+pfp.addEventListener('click', () => {
     pfp.classList.remove('bark');
     void pfp.offsetWidth;
     pfp.classList.add('bark');
@@ -32,21 +20,22 @@ pfp.addEventListener('click', (e) => {
     const r = pfp.getBoundingClientRect();
     const cx = r.left + r.width / 2;
     const cy = r.top + r.height / 2;
-    for (let i = 0; i < 6; i++) {
+    const emojis = ['❤', '💛', '💙', '💜', '🐾', '✨'];
+    for (let i = 0; i < 7; i++) {
         const h = document.createElement('div');
         h.className = 'heart';
-        h.textContent = ['❤', '💛', '💙', '💜', '🐾'][Math.floor(Math.random() * 5)];
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
         h.style.left = cx + 'px';
         h.style.top = cy + 'px';
-        h.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
-        h.style.setProperty('--dy', (-60 - Math.random() * 80) + 'px');
+        h.style.setProperty('--dx', (Math.random() * 140 - 70) + 'px');
+        h.style.setProperty('--dy', (-70 - Math.random() * 80) + 'px');
         document.body.appendChild(h);
         setTimeout(() => h.remove(), 1000);
     }
 });
 
 // ---------- social buttons: pop + paw stamp + open ----------
-document.querySelectorAll('.contactleft').forEach((btn) => {
+document.querySelectorAll('.pill').forEach((btn) => {
     btn.addEventListener('click', () => {
         btn.classList.remove('pop');
         void btn.offsetWidth;
@@ -60,19 +49,21 @@ document.querySelectorAll('.contactleft').forEach((btn) => {
     });
 });
 
-// ---------- paw cursor trail ----------
+// ---------- paw cursor trail (desktop only) ----------
 const pawLayer = document.getElementById('paw-layer');
 let lastPaw = 0;
 let pawSide = 1;
 
-document.addEventListener('mousemove', (e) => {
-    const now = performance.now();
-    if (now - lastPaw < 90) return;
-    lastPaw = now;
-    pawSide *= -1;
-    const offset = pawSide * 6;
-    stampPaw(e.clientX + offset, e.clientY + offset, (Math.random() * 30 - 15));
-});
+if (!isTouch) {
+    document.addEventListener('mousemove', (e) => {
+        const now = performance.now();
+        if (now - lastPaw < 90) return;
+        lastPaw = now;
+        pawSide *= -1;
+        const offset = pawSide * 6;
+        stampPaw(e.clientX + offset, e.clientY + offset, Math.random() * 30 - 15);
+    });
+}
 
 function stampPaw(x, y, rotate = Math.random() * 60 - 30) {
     const p = document.createElement('div');
@@ -89,10 +80,17 @@ const canvas = document.getElementById('sakura');
 const ctx = canvas.getContext('2d');
 let petals = [];
 let W = 0, H = 0;
+let dpr = Math.min(window.devicePixelRatio || 1, 2);
 
 function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 resize();
 window.addEventListener('resize', resize);
@@ -101,8 +99,8 @@ function makePetal() {
     return {
         x: Math.random() * W,
         y: Math.random() * -H,
-        size: 6 + Math.random() * 8,
-        speed: 0.5 + Math.random() * 1.2,
+        size: 5 + Math.random() * 7,
+        speed: 0.4 + Math.random() * 1.0,
         sway: Math.random() * 2 * Math.PI,
         swaySpeed: 0.01 + Math.random() * 0.02,
         rot: Math.random() * Math.PI * 2,
@@ -110,7 +108,9 @@ function makePetal() {
         color: ['#FFD1DC', '#FFB6C1', '#FFC0CB', '#FFE4E1'][Math.floor(Math.random() * 4)],
     };
 }
-for (let i = 0; i < 35; i++) petals.push(makePetal());
+
+const petalCount = isTouch ? 22 : 35;
+for (let i = 0; i < petalCount; i++) petals.push(makePetal());
 
 function drawPetal(p) {
     ctx.save();
@@ -128,7 +128,7 @@ function tick() {
     for (const p of petals) {
         p.y += p.speed;
         p.sway += p.swaySpeed;
-        p.x += Math.sin(p.sway) * 0.8;
+        p.x += Math.sin(p.sway) * 0.7;
         p.rot += p.rotSpeed;
         if (p.y > H + 20) {
             p.y = -20;
@@ -138,20 +138,41 @@ function tick() {
     }
     requestAnimationFrame(tick);
 }
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    tick();
-}
+if (!reducedMotion) tick();
 
-// ---------- konami-ish: type "woof" for confetti ----------
+// ---------- "woof" easter egg: type for confetti, or shake on mobile ----------
 let buf = '';
 document.addEventListener('keydown', (e) => {
     buf = (buf + e.key.toLowerCase()).slice(-4);
     if (buf === 'woof') confetti();
 });
 
+// Mobile: shake the device to trigger confetti
+if (window.DeviceMotionEvent && isTouch) {
+    let lastShake = 0;
+    let lastX = 0, lastY = 0, lastZ = 0;
+    window.addEventListener('devicemotion', (e) => {
+        const a = e.accelerationIncludingGravity;
+        if (!a) return;
+        const dx = Math.abs((a.x || 0) - lastX);
+        const dy = Math.abs((a.y || 0) - lastY);
+        const dz = Math.abs((a.z || 0) - lastZ);
+        if (dx + dy + dz > 30) {
+            const now = performance.now();
+            if (now - lastShake > 1500) {
+                lastShake = now;
+                confetti();
+            }
+        }
+        lastX = a.x || 0;
+        lastY = a.y || 0;
+        lastZ = a.z || 0;
+    });
+}
+
 function confetti() {
     const emojis = ['🐾', '🐶', '❤', '✨', '🌸', '🦴'];
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 50; i++) {
         const c = document.createElement('div');
         c.className = 'heart';
         c.textContent = emojis[Math.floor(Math.random() * emojis.length)];

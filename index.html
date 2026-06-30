@@ -5,7 +5,7 @@
     <title>ハチーダーコリー</title>
     <link rel="icon" type="image/png" href="WWWWWWWW.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#FFD6E8">
+    <meta name="theme-color" content="#2b8fd6">
     <meta name="title" content="ハチーダーコリー"/>
     <meta name="description" content="Get to know me!"/>
 
@@ -20,84 +20,121 @@
     <meta property="twitter:title" content="ハチーダーコリー"/>
     <meta property="twitter:description" content="Get to know me!"/>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <canvas id="sakura" aria-hidden="true"></canvas>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div id="fx" aria-hidden="true"></div>
+
+    <div class="boot" id="boot" aria-hidden="true">
+        <div class="boot-box">
+            <div class="boot-logo">★ Hachi OS</div>
+            <div class="boot-bar"><i></i></div>
+            <div class="boot-msg">starting up…</div>
+        </div>
+    </div>
 
     <main class="page">
-        <header class="hero">
-            <div class="pfp-stage">
-                <div class="pfp-ring" aria-hidden="true"></div>
-                <div class="pfp-glow" aria-hidden="true"></div>
-                <img id="me" class="pfp" src="mypfp.jpg" alt="Hachi the collie"/>
-                <div class="speech-bubble" id="bubble">tap me!</div>
+        <section class="win" id="win" aria-label="Hachidacollie">
+            <div class="win-bar" id="winbar">
+                <span class="win-titleicon" aria-hidden="true">🐾</span>
+                <span class="win-title">Hachidacollie.exe</span>
+                <span class="win-controls">
+                    <button class="gel gel-green" data-act="zoom" aria-label="Zoom"></button>
+                    <button class="gel gel-yellow" data-act="min" aria-label="Minimize"></button>
+                    <button class="gel gel-red" data-act="close" aria-label="Close"></button>
+                </span>
             </div>
 
-            <h1 class="title" aria-label="Hachidacollie">
-                <span>H</span><span>a</span><span>c</span><span>h</span><span>i</span><span>d</span><span>a</span><span>c</span><span>o</span><span>l</span><span>l</span><span>i</span><span>e</span><span>!</span>
-            </h1>
-            <p class="subtitle">ハチーダーコリー</p>
+            <div class="win-body" id="winbody">
+                <div class="hero">
+                    <div class="photo-frame">
+                        <img id="me" class="photo" src="mypfp.jpg" alt="Hachi the collie"/>
+                        <div class="balloon" id="balloon" hidden>woof!</div>
+                    </div>
 
-            <ul class="chips" aria-label="about me">
-                <li class="chip">🐕 collie</li>
-                <li class="chip">🎂 26</li>
-                <li class="chip">🇹🇭 Thailand</li>
-            </ul>
-        </header>
+                    <div class="hero-text">
+                        <h1 class="wordmark">Hachidacollie!</h1>
+                        <p class="kana">ハチーダーコリー</p>
+                        <ul class="chips" aria-label="about me">
+                            <li class="chip">🐕 collie</li>
+                            <li class="chip">🎂 26</li>
+                            <li class="chip">🇹🇭 thailand</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <section class="bio">
-            <p>Hi, I'm <b>Hachi</b> 🐾 a fluffy little collie based in Thailand.</p>
-            <p>I live for weekend trips, sunny afternoons, and meeting new friends. If any of that sounds fun — slide into my DMs anywhere below ♡</p>
-        </section>
-
-        <section class="socials" aria-label="contact">
-            <h2 class="section-label">find me</h2>
-
-            <div class="social-stack">
-                <button class="pill pill-hero" data-url="https://barq.app/@hachidacollie" style="--accent:#FF7A59">
-                    <span class="pill-icon barq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 5h7a4 4 0 0 1 0 8H6v6H4z M11 11h2a3 3 0 0 1 0 6h-3" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                    <span class="pill-hero-text">
-                        <span class="pill-hero-title">Barq</span>
-                        <span class="pill-hero-sub">@hachidacollie</span>
-                    </span>
-                </button>
-
-                <button class="pill pill-hero" data-url="https://twitter.com/hachidacollie" style="--accent:#1DA1F2">
-                    <img class="pill-icon" src="twitter.png" alt="">
-                    <span class="pill-hero-text">
-                        <span class="pill-hero-title">Twitter</span>
-                        <span class="pill-hero-sub">@hachidacollie</span>
-                    </span>
-                </button>
-
-                <button class="pill pill-hero" data-url="https://www.facebook.com/hachix2" style="--accent:#1877F2">
-                    <img class="pill-icon" src="facebook.png" alt="">
-                    <span class="pill-hero-text">
-                        <span class="pill-hero-title">Facebook</span>
-                        <span class="pill-hero-sub">@hachix2</span>
-                    </span>
-                </button>
-
-                <button class="pill pill-hero" data-url="https://t.me/hachidacollie" style="--accent:#26A5E4">
-                    <img class="pill-icon" src="telegram.png" alt="">
-                    <span class="pill-hero-text">
-                        <span class="pill-hero-title">Telegram</span>
-                        <span class="pill-hero-sub">@hachidacollie</span>
-                    </span>
-                </button>
+                <div class="marquee" aria-hidden="true">
+                    <div class="marquee-track">
+                        <span>★ welcome to my page ★ collie from thailand ★ tap an icon to find me ★ woof woof ★&nbsp;</span>
+                        <span>★ welcome to my page ★ collie from thailand ★ tap an icon to find me ★ woof woof ★&nbsp;</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <footer class="footer">made with ♡ &amp; 🐾</footer>
+        <section class="dock" aria-label="find me">
+            <h2 class="dock-label">my links</h2>
+            <div class="dock-grid">
+                <button class="shortcut" data-url="https://t.me/hachidacollie" style="--i:0; --accent:#26A5E4">
+                    <span class="sc-tile">
+                        <img class="sc-glyph" src="telegram.png" alt="">
+                        <span class="sc-badge" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="sc-label">Telegram</span>
+                </button>
+
+                <button class="shortcut" data-url="https://www.facebook.com/hachix2" style="--i:1; --accent:#1877F2">
+                    <span class="sc-tile">
+                        <img class="sc-glyph" src="facebook.png" alt="">
+                        <span class="sc-badge" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="sc-label">Facebook</span>
+                </button>
+
+                <button class="shortcut" data-url="https://twitter.com/hachidacollie" style="--i:2; --accent:#1DA1F2">
+                    <span class="sc-tile">
+                        <img class="sc-glyph" src="twitter.png" alt="">
+                        <span class="sc-badge" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="sc-label">Twitter</span>
+                </button>
+
+                <button class="shortcut" data-url="https://barq.app/@hachidacollie" style="--i:3; --accent:#FF7A59">
+                    <span class="sc-tile sc-tile--barq">
+                        <span class="sc-glyph barq-glyph" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 5h7a4 4 0 0 1 0 8H6v6H4z M11 11h2a3 3 0 0 1 0 6h-3" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="sc-badge" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="sc-label">Barq</span>
+                </button>
+            </div>
+        </section>
+
+        <aside class="note" aria-label="about Hachi">
+            <span class="note-pin" aria-hidden="true"></span>
+            <p>Hi, I'm <b>Hachi</b> — a fluffy little collie based in Thailand.</p>
+            <p>I live for weekend trips, sunny afternoons &amp; meeting new friends. Tap an icon above to say hi! ♡</p>
+        </aside>
     </main>
 
-    <div id="paw-layer" aria-hidden="true"></div>
+    <footer class="taskbar">
+        <button class="start" id="start" aria-label="Start">
+            <span class="start-orb" aria-hidden="true">★</span>hachi
+        </button>
+        <div class="tray">
+            <span class="tray-kana">ハチ</span>
+            <time class="clock" id="clock" aria-label="clock">--:--</time>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

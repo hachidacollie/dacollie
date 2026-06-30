@@ -14,7 +14,7 @@ A personal link-in-bio page for "Hachidacollie" (ハチーダーコリー) — a
 
 ## Brand Personality
 
-Cozy & warm, with a layer of cute/playful charm (kawaii pastels, sakura petals, paw prints, a barking pfp with reactions). Should feel handmade and characterful, not templated.
+Cozy & warm, with a layer of playful charm and a touch of mischief. Should feel handmade and characterful, not templated — the specific visual language (currently a Y2K desktop, "Hachi OS"; previously a boarding-pass travel document, and before that kawaii pastels) is owned by DESIGN.md and free to evolve, as long as the underlying warmth and personality-over-convention stance holds.
 
 ## Anti-references
 
@@ -24,9 +24,9 @@ Explicitly NOT a generic Linktree-style page: no flat stack of plain gray/white 
 
 - Mobile-first, one-handed use: every interaction (button size, spacing, tap targets) is designed for a phone in hand, not scaled down from desktop.
 - Personality over convention: prefer a bespoke, characterful solution over the generic link-in-bio default, even where the generic option is easier.
-- Warmth through detail, not noise: cozy feeling comes from soft color, gentle motion, and small delightful touches (paw stamps, bark reactions) — not from loud or aggressive styling.
+- Warmth through detail, not noise: cozy feeling comes from a specific, well-observed conceit and small delightful touches — not from loud or aggressive styling.
 - Respect quiet preferences: every animation has a `prefers-reduced-motion` fallback; motion enhances rather than gates content.
 
 ## Accessibility & Inclusion
 
-Mobile-first as the primary accessibility concern (touch target size, readable type at small viewports). Respect `prefers-reduced-motion`. Standard baseline contrast — no formal WCAG AA commitment, but body text and pill labels should stay comfortably legible against the pastel/glass backgrounds.
+Mobile-first as the primary accessibility concern (touch target size, readable type at small viewports). Respect `prefers-reduced-motion`. Standard baseline contrast — no formal WCAG AA commitment, but body text and tag labels should stay comfortably legible against their backgrounds.

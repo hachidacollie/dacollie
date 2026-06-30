@@ -1,192 +1,168 @@
 ---
 name: Hachidacollie
-description: Mobile-first link-in-bio page for the Hachidacollie persona — a sunlit, sakura-dusted postcard, not a link aggregator template.
+description: Mobile-first link-in-bio page for the Hachidacollie persona — a Y2K desktop OS ("Hachi OS"), not a link aggregator template.
 colors:
-  ink: "#2A2566"
-  ink-soft: "#4B4485"
-  brown: "#8B4513"
-  pink-petal: "#FFD6E8"
-  pink-blush: "#FFB6C1"
-  sky-pale: "#ADD8E6"
-  sky-mist: "#C9E8F0"
-  paper: "rgba(255, 255, 255, 0.55)"
-  paper-strong: "rgba(255, 255, 255, 0.78)"
-  accent-barq: "#FF7A59"
-  accent-twitter: "#1DA1F2"
-  accent-facebook: "#1877F2"
+  wall-bright: "#5ad7ec"
+  wall-mid: "#2b8fd6"
+  wall-deep: "#143a86"
+  bar-lit: "#4aa3f0"
+  bar-dim: "#1c63c8"
+  face: "#eceff5"
+  face-sunken: "#dfe4ec"
+  chrome-hi: "#ffffff"
+  chrome-lo: "#8b96a6"
+  ink: "#14203a"
+  ink-soft: "#46546e"
+  note: "#fff5b0"
+  note-ink: "#3a3208"
+  gel-red: "#ff5f57"
+  gel-yellow: "#febc2e"
+  gel-green: "#28c840"
   accent-telegram: "#26A5E4"
+  accent-facebook: "#1877F2"
+  accent-twitter: "#1DA1F2"
+  accent-barq: "#FF7A59"
 typography:
-  display:
+  wordmark:
     fontFamily: "MNSeafood, sans-serif"
-    fontSize: "clamp(34px, 9vw, 48px)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "1px"
-  title:
-    fontFamily: "MNSeafood, sans-serif"
-    fontSize: "20px"
-    fontWeight: 400
-    lineHeight: 1.1
-    letterSpacing: "1px"
-  label:
-    fontFamily: "MNSeafood, sans-serif"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "4px"
+    fontSize: "clamp(34px, 9vw, 50px)"
+    note: "solid silver fill + extruded bevel shadow stack (NOT gradient-clip text)"
+  system:
+    fontFamily: "'Silkscreen', monospace"
+    fontSize: "11px"
+    letterSpacing: "0.5px"
+    note: "all OS chrome — title bars, icon labels, taskbar, buttons, marquee"
   body:
     fontFamily: "naturaly, -apple-system, system-ui, sans-serif"
     fontSize: "clamp(15px, 4vw, 17px)"
-    fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "normal"
 rounded:
-  bubble: "14px"
-  pill: "16px"
-  card: "20px"
-  full: "999px"
-  circle: "50%"
+  window: "6px"
+  icon: "14px"
+  gel: "50%"
 spacing:
   xs: "8px"
   sm: "12px"
   md: "16px"
   lg: "20px"
   xl: "28px"
-components:
-  pill-hero:
-    backgroundColor: "{colors.paper-strong}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "16px 12px"
-  pill-hero-hover:
-    backgroundColor: "{colors.paper-strong}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "16px 12px"
-  chip:
-    backgroundColor: "{colors.paper-strong}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.full}"
-    padding: "6px 12px"
-  bio-card:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.card}"
-    padding: "18px 20px"
 ---
 
-# Design System: Hachidacollie
+# Design System: Hachidacollie — "Hachi OS"
 
 ## 1. Overview
 
-**Creative North Star: "The Postcard from Thailand"**
+**Creative North Star: "Hachi OS — a Y2K desktop you can poke at"**
 
-This page reads like a sun-warmed postcard pinned to a corkboard: a pastel sky bleeding from blue into pink, sakura petals drifting past, a round-framed photo of a happy collie that wags when you tap it. It is warm and a little nostalgic rather than loud or toy-like — the kind of page a friend would send you, not a SaaS product would ship. Every surface is soft: frosted glass cards, rounded pill buttons, ambient glows instead of hard shadows.
+The page is a glossy early-2000s computer desktop. A bright aqua wallpaper with pixel stars; a draggable chrome **window** titled `Hachidacollie.exe` holding the photo and name; the social links are glossy **desktop shortcut icons**; the bio is a yellow **sticky note**; and a real **taskbar** runs along the bottom with a live ticking clock. It boots with a splash, the cursor trails pixel sparkles, and tapping the photo pops a little system **balloon tip** that barks at you.
 
-This system explicitly rejects the generic Linktree look: no flat stack of plain gray or white buttons, no interchangeable card-grid template, no corporate landing-page tropes (hero metrics, tiny uppercase eyebrows, gradient-text headlines). It also rejects toy-like "kawaii pocket pet" bounciness as the dominant register — motion here is gentle (idle bob, slow spin, soft pulse), not springy or hyperactive. The page is built mobile-first: every button, chip, and tap target is sized for a thumb, not scaled down from a desktop layout.
+This is a deliberate, complete departure from the two previous systems (pastel-sakura postcard, then navy boarding-pass). It is loud, maximal, and unmistakably hand-made — the opposite of a clean Linktree template. The warmth that earlier systems carried through pastel softness now comes from nostalgia and toy-like interactivity: gel buttons, bevels, gloss, and things that wiggle when you touch them.
 
 **Key Characteristics:**
-- Pastel sky gradient (blue → pink) as the constant backdrop, never solid white or dark.
-- Frosted-glass ("paper") surfaces for every card and pill — translucency over flat fill.
-- Warm ink-purple text, never pure black or cool gray.
-- Each social pill carries its own brand accent color, set apart by ambient colored glow rather than a border stripe.
-- Motion is slow and breathing (4–12s loops), reserved for idle states; taps trigger quick, deliberate feedback (bark, pop, paw stamp), not bounce-everywhere choreography.
+- Glossy aqua desktop wallpaper (Committed color) — never flat, never minimal.
+- Everything is a chrome-beveled OS object (window / icon / note / taskbar), not a flat card.
+- Pixel system font (Silkscreen) for every piece of chrome; the name stays MNSeafood for identity.
+- Gel/aqua highlights: glossy top-lit gradients on buttons and icons.
+- Motion is playful and immediate (boot splash, marquee, sparkle trail, balloon barks, draggable window) — this register WANTS busy, where the prior ones wanted calm.
 
 ## 2. Colors
 
-A pastel sky-to-petal gradient backdrop carries the page; ink-purple text and a warm brown sit on top for legibility and a handwritten feel.
+**Strategy: Committed + period palette.** Reference: an iMac-G3 / Windows-XP-Aqua desktop. One saturated aqua wallpaper carries the surface; chrome silver and glossy blue title bars sit on top; candy gel accents (red/yellow/green) and the four brand colors punctuate.
 
-### Primary
-- **Petal Pink** (#FFD6E8): the gradient's warm end, dominant in the lower half of the backdrop and in the pfp ring/glow.
-- **Blush Pink** (#FFB6C1): secondary petal tone, used in the sakura canvas and pfp ring.
+### Wallpaper
+- **Wall Bright** `#5ad7ec` → **Wall Mid** `#2b8fd6` → **Wall Deep** `#143a86`: a top-lit radial gradient, the glossy "desktop". A faint pixel-dot grid and twinkling stars sit over it.
 
-### Secondary
-- **Pale Sky** (#ADD8E6): the gradient's cool start, top of the backdrop.
-- **Misty Sky** (#C9E8F0): gradient midpoint, softens the blue-to-pink transition.
+### Chrome
+- **Face** `#eceff5` / **Face Sunken** `#dfe4ec`: window/note body fills.
+- **Chrome Hi** `#ffffff` / **Chrome Lo** `#8b96a6`: the two bevel edges (light top-left, dark bottom-right) on every raised/sunken object. This bevel IS the system's depth language — there are no soft ambient shadows here, only hard 3D ridges.
+- **Bar Lit** `#4aa3f0` → **Bar Dim** `#1c63c8`: glossy title-bar gradient; title text is white.
 
-### Tertiary
-- **Barq Coral** (#FF7A59), **Twitter Blue** (#1DA1F2), **Facebook Blue** (#1877F2), **Telegram Sky** (#26A5E4): one accent per social pill, used only as that pill's `--accent` (background tint, border, icon color, glow). Never used outside its own pill.
+### Accents
+- **Gel Red/Yellow/Green** `#ff5f57 / #febc2e / #28c840`: the three round window-control buttons (close/minimize/zoom). Used nowhere else.
+- **Note** `#fff5b0` with **Note Ink** `#3a3208`: the bio sticky note (high contrast, very legible).
+
+### Brand (per icon)
+- **Telegram** `#26A5E4`, **Facebook** `#1877F2`, **Twitter** `#1DA1F2`, **Barq** `#FF7A59`: one glossy gradient per shortcut icon tile, plus that platform's glyph. Never bleeds into shared chrome.
 
 ### Neutral
-- **Ink Purple** (#2A2566): primary text color — headings, body copy. Warm-dark, never pure black.
-- **Soft Ink** (#4B4485): secondary text — subtitle, section labels, pill sub-text. Slightly receded from Ink Purple.
-- **Saddle Brown** (#8B4513): accent ink for emphasis (bold text in bio, speech-bubble border/text, paw-print fill). The "handwritten" color.
-- **Frosted Paper** (rgba(255,255,255,0.55)): translucent surface for the bio card.
-- **Frosted Paper Strong** (rgba(255,255,255,0.78)): translucent surface for chips and pills, slightly more opaque for legibility over busy backdrop.
+- **Ink** `#14203a` (primary text on light chrome), **Ink Soft** `#46546e` (secondary).
 
 ### Named Rules
-**The One Accent Per Pill Rule.** Each social pill owns exactly one brand accent color (`--accent`), expressed consistently as background tint, border, icon color, and glow. Accents never bleed into shared chrome (page background, bio card, chips stay neutral ink/paper).
+**The Bevel-Not-Shadow Rule.** Depth is always a hard two-tone bevel (light + dark inset/outset ridge), never a soft blurred drop shadow. A soft Material shadow reads as modern-flat and breaks the Y2K illusion.
+
+**The One Gloss Per Icon Rule.** Each social shortcut owns exactly one brand color as its glossy tile gradient; the page chrome stays silver/aqua. (Successor to the earlier "one accent per pill/tag" rule.)
 
 ## 3. Typography
 
-**Display Font:** MNSeafood (with sans-serif fallback)
-**Body Font:** naturaly (with -apple-system, system-ui, sans-serif fallback)
+**Wordmark:** MNSeafood — kept across all three systems as Hachi's name identity. Rendered as solid silver with an **extruded bevel shadow stack** (offset hard shadows + text-stroke), giving a chrome/3D look **without** `background-clip` gradient text (which is banned and also wasn't period-authentic — Win9x logos were beveled solids, not CSS gradients).
+**System:** Silkscreen (pixel bitmap font) — every OS chrome element: window titles, icon labels, taskbar, button text, the marquee, the about-chips, the clock. This is the connective tissue.
+**Body:** naturaly — the bio sticky note only, Hachi's "handwritten" voice, kept from earlier systems.
 
-**Character:** MNSeafood is a rounded, hand-drawn display face used sparingly for moments that should feel personal and playful (the name, pill titles, section labels). naturaly is a softer, friendlier body face that keeps paragraphs readable without feeling corporate.
+Three families, each a single non-overlapping job: a beveled brand wordmark, a pixel system UI face, and a handwritten note face.
 
 ### Hierarchy
-- **Display** (400, `clamp(34px, 9vw, 48px)`, line-height 1): the page title "Hachidacollie!" — outlined in brown, letter-by-letter bounce animation, one per page.
-- **Title** (400, 20px, line-height 1.1): pill hero titles ("Barq", "Twitter", etc.).
-- **Label** (400, 16px, line-height 1.2, 4px tracking, uppercase): the "find me" section label — the one deliberate uppercase-tracked moment on the page, not repeated elsewhere.
-- **Body** (400, `clamp(15px, 4vw, 17px)`, line-height 1.5): bio paragraphs. Capped by the bio card's own width (≤480px page), well under 75ch.
-- **Sub-label** (400, 12px): pill subtitle (handle/username), ink-soft, truncates with ellipsis on overflow.
+- **Wordmark** (`clamp(34px, 9vw, 50px)`): "Hachidacollie!" inside the window. One per page.
+- **System** (11–13px, Silkscreen): all chrome. Pixel fonts must stay ≥11px and on a solid plate to render crisp and legible; never set pixel type as light-gray-on-busy.
+- **Body** (`clamp(15px, 4vw, 17px)`, naturaly): bio note, dark ink on yellow.
 
 ### Named Rules
-**The Single Eyebrow Rule.** Only one section in the whole page (`find me`) uses the small-caps tracked-label treatment. It is not a repeating scaffold — don't add a second eyebrow above the bio or hero.
+**The Pixel-On-Plate Rule.** Silkscreen text always sits on a solid contrasting plate (title bar, icon label tab, taskbar, chip) — never floating directly on the busy wallpaper, where it would shimmer and fail contrast.
 
 ## 4. Elevation
 
-No hard drop shadows. Depth comes from ambient, color-tinted glow: soft colored radial blur behind the pfp, diffuse accent-tinted shadows under each pill, gentle blur under the bio card. Shadows are always soft-edged and low-contrast against the pastel backdrop — never a crisp dark rectangle.
+No soft shadows anywhere (see The Bevel-Not-Shadow Rule). Depth is hard bevels:
 
-### Shadow Vocabulary
-- **Soft Ambient** (`box-shadow: 0 8px 24px rgba(106, 90, 205, 0.15)`): default resting elevation for chips and the bio card.
-- **Pop Ambient** (`box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18)`): used only on the profile photo, where slightly more contrast is needed to lift it off the busy backdrop.
-- **Accent Glow** (`box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent), 0 4px 10px rgba(0,0,0,0.08)`): per-pill resting glow, tinted by that pill's own accent.
-- **Accent Glow Hover** (`box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 35%, transparent), 0 4px 10px rgba(0,0,0,0.1)`): glow intensifies and lifts on hover/focus.
-
-### Named Rules
-**The No Hard Edge Rule.** Every shadow in this system is soft and color-tinted. A crisp, neutral-gray drop shadow is always wrong here — it reads as corporate, not postcard.
+- **Raised** (windows, buttons, icon tiles, taskbar): light ridge top-left, dark ridge bottom-right — the object pops toward you.
+- **Sunken** (photo frame, the marquee well, text fields): the inverse — dark top-left, light bottom-right — the content is recessed into the surface.
+- **Pressed** (button :active): bevel inverts from raised to sunken, and content nudges 1px down-right — a real physical click.
 
 ## 5. Components
 
-Soft and huggable: frosted glass, generous rounding, ambient glow. Nothing in this system has a sharp corner or a flat hard-edged fill.
+### The Desktop (wallpaper)
+Full-bleed aqua radial gloss + faint pixel grid + JS-spawned twinkling stars + a sparkle cursor trail (non-touch). The stage everything floats on.
 
-### Buttons (Social Pills)
-- **Shape:** rounded rectangle, 16px corner radius (`rounded.pill`).
-- **Primary (`pill-hero`):** 2-column grid item, frosted gradient tint of its own `--accent` (28%→12% mix into white), 2px border in accent at 55% mix, icon + title + sub-text stacked and centered. Minimum 120px tall for a comfortable thumb target.
-- **Hover/Focus:** lifts via accent glow intensification (see Accent Glow Hover) and border solidifies to full accent; on touch devices hover transforms are suppressed (`@media (hover: none)`) so taps don't fire a stuck hover state.
-- **Tap feedback:** `.pop` keyframe (scale 1 → 1.08 rotate 2deg → 1) plus a small brown paw-print stamp at the tap point, before the link opens in a new tab.
+### The Window (`Hachidacollie.exe`)
+- Raised chrome frame, 6px radius. **Title bar**: glossy blue gradient, a tiny pixel app-icon, the filename in white Silkscreen, and three round gel buttons at right.
+- **The gel buttons work**: green = happy pulse, yellow = minimize (collapse the window body), red = "you can't close me :3" (window shake + balloon). Interactive, not decorative chrome.
+- **Draggable** by the title bar (pointer events, transform-based, clamped on-screen). A real toy.
+- Body holds: the photo (sunken frame), the beveled wordmark + kana, a marquee, and the about-chips.
 
-### Chips
-- **Style:** frosted-paper-strong background, full pill radius (999px), thin brown-tinted border (1.5px, `rgba(139,69,19,0.25)`), soft ambient shadow. Used only for the three short "about me" facts under the title — not reused as a generic tag component elsewhere.
+### The Photo + Balloon (signature interaction)
+Square photo in a sunken bevel frame. Tap → a Windows-style **balloon tip** pops from it (pixel font, little tail) cycling bark lines (`woof!`, `awoo~`, `sawatdee!`...), plus a small sparkle burst. Successor to the postcard's bark-hearts and the boarding-pass stamp — same "tap the dog, the dog reacts" idea, re-skinned as an OS notification.
 
-### Cards / Containers
-- **Corner style:** 20px radius (`rounded.card`), used only by the bio card.
-- **Background:** Frosted Paper (55% white), blurred 8px.
-- **Shadow strategy:** Soft Ambient (see Elevation).
-- **Border:** 1.5px solid `rgba(255,255,255,0.6)` — a light frost-edge, not a colored stripe.
-- **Internal padding:** 18px 20px.
+### Marquee
+A sunken well with horizontally scrolling Silkscreen text (`★ welcome ★ collie from thailand ★ tap an icon to find me ★`). Pure CSS loop; pauses under reduced motion.
 
-### Navigation
-No traditional nav; the page is a single scroll. The "find me" section label functions as the only wayfinding element, MNSeafood label-style typography, centered, 12px bottom margin.
+### Social Shortcuts (the links)
+- A 2×2 grid of glossy **desktop icons**, ordered by real-world priority: **Telegram, Facebook, Twitter, Barq**.
+- Each: a brand-colored glossy gel tile (top-lit gradient) with the platform glyph, a **shortcut-arrow badge** bottom-left, and a pixel label on a light plate below.
+- Placed **directly below the window, above the bio** — identity → links → bio, so the page's core job (routing to socials) is reachable on phone without scrolling past the bio.
+- Hover: tile brightens, lifts, label gets a dotted selection box (authentic OS selection). Tap: bevel presses in + sparkle burst, then opens the link.
+- Enter staggered on boot (each icon "drops in" 70ms after the last).
 
-### Signature Component: The Reactive PFP
-The profile photo is the page's centerpiece interaction: idle bob + slow rotating ring + pulsing glow at rest; on tap it barks (scale/rotate keyframe), cycles through a fixed list of short reaction lines in a speech bubble, and emits a small burst of emoji hearts from its center. This is the one place where motion is allowed to be playful and immediate rather than slow and ambient — it's the page's single moment of delight, not a pattern to repeat elsewhere.
+### The Bio (sticky note)
+A yellow sticky note pinned at a slight tilt over the desktop, dark ink, naturaly font, a small "pin" dot at the top. The one warm, hand-written object among the cold chrome.
+
+### The Taskbar
+Fixed to the bottom: a raised bar with a **Start-style button** (`★ hachi`) at left and a system **tray** at right showing the kana and a **live ticking clock** (JS, updates each second). The page's footer, re-imagined as OS chrome.
+
+### Boot Splash
+On load: a brief full-screen `Hachi OS` splash with a filling progress bar, then fades to reveal the desktop (~1.1s). Skipped instantly under reduced motion. The page's one entrance flourish.
 
 ## 6. Do's and Don'ts
 
-### Do:
-- **Do** keep the pastel sky-to-petal gradient (`#ADD8E6 → #C9E8F0 → #FFD6E8`) as the constant page backdrop — never solid white or dark.
-- **Do** use frosted/translucent surfaces (`paper`, `paper-strong`) for every card, chip, and pill — opacity and blur, not flat fill.
-- **Do** give each social pill exactly one brand accent color, expressed consistently as background tint, border, icon, and glow (The One Accent Per Pill Rule).
-- **Do** keep shadows soft-edged and color-tinted (Soft Ambient / Accent Glow) — depth through glow, not hard drop shadows (The No Hard Edge Rule).
-- **Do** size every tap target for a thumb first; this page is read overwhelmingly on phones.
-- **Do** provide a `prefers-reduced-motion` fallback for every animation (idle bob, ring spin, pulse, bounce-letter all collapse to instant/near-instant under reduced motion).
+### Do
+- **Do** keep the glossy aqua wallpaper as the committed surface — never flat or minimal.
+- **Do** render every object with a hard two-tone bevel (The Bevel-Not-Shadow Rule).
+- **Do** keep Silkscreen on a solid plate everywhere it appears (The Pixel-On-Plate Rule).
+- **Do** give each social icon exactly one glossy brand color (The One Gloss Per Icon Rule).
+- **Do** keep the socials directly under the window, above the bio, thumb-reachable.
+- **Do** provide reduced-motion fallbacks: no boot animation, no marquee scroll, no sparkles, static stars — content shows instantly.
 
-### Don't:
-- **Don't** build a generic Linktree-style flat list of plain gray/white buttons — every pill carries its own color, shape, and personality.
-- **Don't** use a uniform card grid where every tile looks interchangeable; the hero pills are visually distinct by accent color and icon, not just by label text.
-- **Don't** reach for corporate/SaaS landing-page tropes: no hero metrics, no gradient-clipped text, no tiny uppercase eyebrow above more than one section (The Single Eyebrow Rule).
-- **Don't** use a side-stripe `border-left`/`border-right` as a colored accent anywhere; accent color is carried by background tint, border (all sides), and glow instead.
-- **Don't** use crisp neutral-gray drop shadows; every shadow here is soft and tinted (The No Hard Edge Rule).
-- **Don't** make ambient/idle motion fast or springy; reserve bounce/pop energy for direct tap feedback only (pfp bark, pill pop), not for background loops.
+### Don't
+- **Don't** reintroduce pastel-sakura softness OR the navy boarding-pass — both systems are retired, not layered in.
+- **Don't** use soft/blurred drop shadows; depth is bevels only.
+- **Don't** use `background-clip:text` gradient for the chrome wordmark; bevel a solid fill instead (it's banned and inauthentic).
+- **Don't** float pixel text directly on the wallpaper; it must sit on a plate.
+- **Don't** use a side-stripe as an icon's accent; the whole tile carries the brand color.
+- **Don't** let the boot, marquee, or sparkle effects run under reduced motion.

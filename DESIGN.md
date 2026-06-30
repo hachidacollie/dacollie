@@ -176,7 +176,7 @@ The profile photo is the page's centerpiece interaction: idle bob + slow rotatin
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** keep the pastel sky-to-petal gradient (`#ADD8E6 → #C9E8F0 → #FFD1DC`) as the constant page backdrop — never solid white or dark.
+- **Do** keep the pastel sky-to-petal gradient (`#ADD8E6 → #C9E8F0 → #FFD6E8`) as the constant page backdrop — never solid white or dark.
 - **Do** use frosted/translucent surfaces (`paper`, `paper-strong`) for every card, chip, and pill — opacity and blur, not flat fill.
 - **Do** give each social pill exactly one brand accent color, expressed consistently as background tint, border, icon, and glow (The One Accent Per Pill Rule).
 - **Do** keep shadows soft-edged and color-tinted (Soft Ambient / Accent Glow) — depth through glow, not hard drop shadows (The No Hard Edge Rule).

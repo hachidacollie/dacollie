@@ -13,7 +13,6 @@
     --ink: #2a2566;
     --ink-soft: #4b4485;
     --brown: #8B4513;
-    --cream: #F5DEB3;
     --pink-1: #FFD6E8;
     --pink-2: #FFB6C1;
     --blue-1: #ADD8E6;
@@ -480,7 +479,7 @@ body {
 
 @media (hover: none) {
     /* Touch devices: tame hover transforms that fire on tap */
-    .pill:hover { transform: none; box-shadow: var(--shadow-soft); }
+    .pill:hover { transform: none; box-shadow: var(--shadow-soft); border-color: rgba(255,255,255,0.7); }
     .pfp:hover { transform: none; }
 }
 

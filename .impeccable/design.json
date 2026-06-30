@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T00:00:00.000Z",
+  "title": "Design System: Hachidacollie",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink Purple", "canonical": "oklch(31% 0.11 295)", "tonalRamp": ["oklch(15% 0.07 295)", "oklch(22% 0.09 295)", "oklch(31% 0.11 295)", "oklch(40% 0.11 295)", "oklch(55% 0.10 295)", "oklch(70% 0.08 295)", "oklch(85% 0.04 295)", "oklch(95% 0.01 295)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "oklch(40% 0.10 295)", "tonalRamp": ["oklch(15% 0.07 295)", "oklch(25% 0.09 295)", "oklch(40% 0.10 295)", "oklch(50% 0.09 295)", "oklch(62% 0.07 295)", "oklch(75% 0.05 295)", "oklch(87% 0.03 295)", "oklch(96% 0.01 295)"] },
+      "brown": { "role": "neutral", "displayName": "Saddle Brown", "canonical": "oklch(45% 0.10 50)", "tonalRamp": ["oklch(18% 0.06 50)", "oklch(28% 0.08 50)", "oklch(45% 0.10 50)", "oklch(55% 0.10 50)", "oklch(66% 0.09 50)", "oklch(78% 0.06 50)", "oklch(88% 0.03 50)", "oklch(96% 0.01 50)"] },
+      "pink-petal": { "role": "primary", "displayName": "Petal Pink", "canonical": "oklch(89% 0.06 350)", "tonalRamp": ["oklch(35% 0.10 350)", "oklch(50% 0.13 350)", "oklch(65% 0.12 350)", "oklch(78% 0.09 350)", "oklch(89% 0.06 350)", "oklch(93% 0.04 350)", "oklch(96% 0.02 350)", "oklch(98% 0.01 350)"] },
+      "pink-blush": { "role": "primary", "displayName": "Blush Pink", "canonical": "oklch(83% 0.08 0)", "tonalRamp": ["oklch(35% 0.12 0)", "oklch(50% 0.15 0)", "oklch(65% 0.13 0)", "oklch(75% 0.10 0)", "oklch(83% 0.08 0)", "oklch(90% 0.05 0)", "oklch(95% 0.03 0)", "oklch(98% 0.01 0)"] },
+      "sky-pale": { "role": "secondary", "displayName": "Pale Sky", "canonical": "oklch(85% 0.06 230)", "tonalRamp": ["oklch(35% 0.10 230)", "oklch(50% 0.12 230)", "oklch(65% 0.11 230)", "oklch(76% 0.08 230)", "oklch(85% 0.06 230)", "oklch(91% 0.04 230)", "oklch(96% 0.02 230)", "oklch(98% 0.01 230)"] },
+      "sky-mist": { "role": "secondary", "displayName": "Misty Sky", "canonical": "oklch(91% 0.03 220)", "tonalRamp": ["oklch(35% 0.08 220)", "oklch(50% 0.09 220)", "oklch(65% 0.07 220)", "oklch(80% 0.05 220)", "oklch(91% 0.03 220)", "oklch(94% 0.02 220)", "oklch(97% 0.01 220)", "oklch(99% 0.005 220)"] },
+      "accent-barq": { "role": "tertiary", "displayName": "Barq Coral", "canonical": "oklch(67% 0.18 35)", "tonalRamp": ["oklch(25% 0.10 35)", "oklch(40% 0.15 35)", "oklch(55% 0.18 35)", "oklch(67% 0.18 35)", "oklch(76% 0.14 35)", "oklch(85% 0.09 35)", "oklch(92% 0.05 35)", "oklch(97% 0.02 35)"] },
+      "accent-twitter": { "role": "tertiary", "displayName": "Twitter Blue", "canonical": "oklch(63% 0.15 235)", "tonalRamp": ["oklch(22% 0.08 235)", "oklch(38% 0.13 235)", "oklch(52% 0.16 235)", "oklch(63% 0.15 235)", "oklch(74% 0.11 235)", "oklch(84% 0.07 235)", "oklch(92% 0.04 235)", "oklch(97% 0.02 235)"] },
+      "accent-facebook": { "role": "tertiary", "displayName": "Facebook Blue", "canonical": "oklch(48% 0.18 260)", "tonalRamp": ["oklch(18% 0.10 260)", "oklch(30% 0.15 260)", "oklch(40% 0.18 260)", "oklch(48% 0.18 260)", "oklch(62% 0.14 260)", "oklch(76% 0.09 260)", "oklch(88% 0.05 260)", "oklch(96% 0.02 260)"] },
+      "accent-telegram": { "role": "tertiary", "displayName": "Telegram Sky", "canonical": "oklch(68% 0.13 230)", "tonalRamp": ["oklch(25% 0.07 230)", "oklch(40% 0.11 230)", "oklch(55% 0.13 230)", "oklch(68% 0.13 230)", "oklch(78% 0.09 230)", "oklch(86% 0.06 230)", "oklch(93% 0.03 230)", "oklch(97% 0.01 230)"] },
+      "paper": { "role": "neutral", "displayName": "Frosted Paper", "canonical": "rgba(255, 255, 255, 0.55)", "tonalRamp": [] },
+      "paper-strong": { "role": "neutral", "displayName": "Frosted Paper Strong", "canonical": "rgba(255, 255, 255, 0.78)", "tonalRamp": [] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page title only — \"Hachidacollie!\" letter-bounce headline." },
+      "title": { "displayName": "Pill Title", "purpose": "Social pill hero titles (Barq, Twitter, Facebook, Telegram)." },
+      "label": { "displayName": "Section Label", "purpose": "The single 'find me' eyebrow — not reused elsewhere." },
+      "body": { "displayName": "Body", "purpose": "Bio paragraphs." }
+    },
+    "shadows": [
+      { "name": "soft-ambient", "value": "0 8px 24px rgba(106, 90, 205, 0.15)", "purpose": "Default resting elevation for chips and the bio card." },
+      { "name": "pop-ambient", "value": "0 12px 28px rgba(0, 0, 0, 0.18)", "purpose": "Profile photo only — needs more contrast to lift off the busy backdrop." },
+      { "name": "accent-glow", "value": "0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent), 0 4px 10px rgba(0,0,0,0.08)", "purpose": "Per-pill resting glow tinted by that pill's accent." },
+      { "name": "accent-glow-hover", "value": "0 14px 28px color-mix(in srgb, var(--accent) 35%, transparent), 0 4px 10px rgba(0,0,0,0.1)", "purpose": "Pill hover/focus state — glow intensifies and lifts." }
+    ],
+    "motion": [
+      { "name": "idle-bob", "value": "4s ease-in-out infinite", "purpose": "Profile photo gentle float at rest." },
+      { "name": "ring-spin", "value": "12s linear infinite", "purpose": "Conic gradient ring rotation behind the pfp." },
+      { "name": "glow-pulse", "value": "4s ease-in-out infinite", "purpose": "Ambient glow breathing behind the pfp." },
+      { "name": "bark-pop", "value": "0.5s ease", "purpose": "Tap feedback on the pfp — scale + rotate." },
+      { "name": "pill-pop", "value": "0.4s ease", "purpose": "Tap feedback on social pills." },
+      { "name": "letter-bounce", "value": "2.4s ease-in-out infinite, staggered 0.06s per letter", "purpose": "Title letters bounce in a wave." }
+    ],
+    "breakpoints": [
+      { "name": "page-max", "value": "480px" },
+      { "name": "tablet", "value": "540px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Social Pill (Hero)",
+      "kind": "button",
+      "refersTo": "pill-hero",
+      "description": "2-column grid social link button with accent-tinted background, icon, title, and handle.",
+      "html": "<button class=\"ds-pill-hero\" style=\"--accent:#FF7A59\"><span class=\"ds-pill-icon\"><svg viewBox=\"0 0 24 24\" width=\"38\" height=\"38\"><path d=\"M4 5h7a4 4 0 0 1 0 8H6v6H4z M11 11h2a3 3 0 0 1 0 6h-3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span class=\"ds-pill-text\"><span class=\"ds-pill-title\">Barq</span><span class=\"ds-pill-sub\">@hachidacollie</span></span></button>",
+      "css": ".ds-pill-hero { width: 100%; min-height: 120px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; border-radius: 16px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 28%, #fff) 0%, color-mix(in srgb, var(--accent) 12%, #fff) 100%); border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); color: #2A2566; cursor: pointer; box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent), 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; } .ds-pill-icon { width: 38px; height: 38px; color: var(--accent); } .ds-pill-title { font-family: MNSeafood, sans-serif; font-size: 20px; letter-spacing: 1px; } .ds-pill-sub { font-family: naturaly, sans-serif; font-size: 12px; color: #4B4485; opacity: 0.8; margin-top: 3px; } .ds-pill-hero:hover, .ds-pill-hero:focus-visible { border-color: var(--accent); box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 35%, transparent), 0 4px 10px rgba(0,0,0,0.1); transform: translateY(-3px); }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small pastel pill tag used only for the 'about me' facts row.",
+      "html": "<span class=\"ds-chip\">🐕 collie</span>",
+      "css": ".ds-chip { display: inline-block; background: rgba(255,255,255,0.78); color: #2A2566; font-family: naturaly, sans-serif; font-size: 15px; padding: 6px 12px; border-radius: 999px; border: 1.5px solid rgba(139, 69, 19, 0.25); backdrop-filter: blur(4px); box-shadow: 0 8px 24px rgba(106, 90, 205, 0.15); }"
+    },
+    {
+      "name": "Bio Card",
+      "kind": "card",
+      "refersTo": "bio-card",
+      "description": "Frosted-glass card holding the bio paragraphs.",
+      "html": "<div class=\"ds-bio-card\"><p>Hi, I'm <b>Hachi</b> 🐾 a fluffy little collie based in Thailand.</p></div>",
+      "css": ".ds-bio-card { background: rgba(255,255,255,0.55); backdrop-filter: blur(8px); border-radius: 20px; padding: 18px 20px; text-align: center; border: 1.5px solid rgba(255,255,255,0.6); box-shadow: 0 8px 24px rgba(106, 90, 205, 0.15); color: #2A2566; } .ds-bio-card b { color: #8B4513; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Postcard from Thailand",
+    "overview": "This page reads like a sun-warmed postcard pinned to a corkboard: a pastel sky bleeding from blue into pink, sakura petals drifting past, a round-framed photo of a happy collie that wags when you tap it. It is warm and a little nostalgic rather than loud or toy-like — the kind of page a friend would send you, not a SaaS product would ship. Every surface is soft: frosted glass cards, rounded pill buttons, ambient glows instead of hard shadows. This system explicitly rejects the generic Linktree look: no flat stack of plain gray or white buttons, no interchangeable card-grid template, no corporate landing-page tropes (hero metrics, tiny uppercase eyebrows, gradient-text headlines). It also rejects toy-like 'kawaii pocket pet' bounciness as the dominant register — motion here is gentle (idle bob, slow spin, soft pulse), not springy or hyperactive. The page is built mobile-first: every button, chip, and tap target is sized for a thumb, not scaled down from a desktop layout.",
+    "keyCharacteristics": [
+      "Pastel sky gradient (blue → pink) as the constant backdrop, never solid white or dark.",
+      "Frosted-glass ('paper') surfaces for every card and pill — translucency over flat fill.",
+      "Warm ink-purple text, never pure black or cool gray.",
+      "Each social pill carries its own brand accent color, set apart by ambient colored glow rather than a border stripe.",
+      "Motion is slow and breathing (4–12s loops), reserved for idle states; taps trigger quick, deliberate feedback (bark, pop, paw stamp), not bounce-everywhere choreography."
+    ],
+    "rules": [
+      { "name": "The One Accent Per Pill Rule", "body": "Each social pill owns exactly one brand accent color (--accent), expressed consistently as background tint, border, icon color, and glow. Accents never bleed into shared chrome.", "section": "colors" },
+      { "name": "The Single Eyebrow Rule", "body": "Only one section in the whole page ('find me') uses the small-caps tracked-label treatment. It is not a repeating scaffold.", "section": "typography" },
+      { "name": "The No Hard Edge Rule", "body": "Every shadow in this system is soft and color-tinted. A crisp, neutral-gray drop shadow is always wrong here.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the pastel sky-to-petal gradient (#ADD8E6 → #C9E8F0 → #FFD1DC) as the constant page backdrop — never solid white or dark.",
+      "Do use frosted/translucent surfaces (paper, paper-strong) for every card, chip, and pill — opacity and blur, not flat fill.",
+      "Do give each social pill exactly one brand accent color, expressed consistently as background tint, border, icon, and glow (The One Accent Per Pill Rule).",
+      "Do keep shadows soft-edged and color-tinted (Soft Ambient / Accent Glow) — depth through glow, not hard drop shadows (The No Hard Edge Rule).",
+      "Do size every tap target for a thumb first; this page is read overwhelmingly on phones.",
+      "Do provide a prefers-reduced-motion fallback for every animation."
+    ],
+    "donts": [
+      "Don't build a generic Linktree-style flat list of plain gray/white buttons.",
+      "Don't use a uniform card grid where every tile looks interchangeable.",
+      "Don't reach for corporate/SaaS landing-page tropes: no hero metrics, no gradient-clipped text, no tiny uppercase eyebrow above more than one section (The Single Eyebrow Rule).",
+      "Don't use a side-stripe border-left/border-right as a colored accent anywhere.",
+      "Don't use crisp neutral-gray drop shadows; every shadow here is soft and tinted (The No Hard Edge Rule).",
+      "Don't make ambient/idle motion fast or springy; reserve bounce/pop energy for direct tap feedback only."
+    ]
+  }
+}
